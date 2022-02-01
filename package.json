@@ -25,11 +25,14 @@
     "@nestjs/core": "^8.0.0",
     "@nestjs/graphql": "^9.1.2",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/typeorm": "^8.0.3",
     "apollo-server-express": "^3.6.2",
     "graphql": "^15.8.0",
+    "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "typeorm": "^0.2.41"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
@@ -41,6 +44,8 @@
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^15.0.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
