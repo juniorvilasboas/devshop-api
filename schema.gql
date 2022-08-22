@@ -10,6 +10,7 @@ type Category {
 
 type Query {
   getAllCategories: [Category!]!
+  getCategoryById(id: String!): Category!
 }
 
 type Mutation {
