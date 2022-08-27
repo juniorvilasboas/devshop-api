@@ -14,9 +14,9 @@ type Query {
 }
 
 type Mutation {
-  panelCreateCategory(input: CategoryCreateInput!): Category!
-  panelUpdateCategory(input: CategoryUpdateInput!): Category!
-  panelDeleteCategory(id: String!): Boolean!
+  createCategory(input: CategoryCreateInput!): Category!
+  updateCategory(input: CategoryUpdateInput!): Category!
+  deleteCategory(id: String!): Boolean!
 }
 
 input CategoryCreateInput {
