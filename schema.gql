@@ -10,9 +10,10 @@ type Category {
 
 type Product {
   id: String
-  description: String
   name: String
+  description: String
   slug: String
+  category: String
 }
 
 type Query {
