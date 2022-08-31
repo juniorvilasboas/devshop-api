@@ -1,4 +1,4 @@
-import { Category } from 'src/category/category.entity'
+import { Category } from '../category/category.entity'
 import { ProductPublic } from './dto/product'
 import { ProductCreateInput } from './dto/productCreate.input'
 import { ProductUpdateInput } from './dto/productUpdate.input'
