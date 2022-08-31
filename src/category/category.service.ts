@@ -18,6 +18,10 @@ export class CategoryService {
     return this.categoryRepository.findOne(id)
   }
 
+  async findBySlug(slug: string): Promise<Category> {
+    return this.categoryRepository.findOne({ where: [{ slug }] })
+  }
+
   async create(input: Category): Promise<Category> {
     return this.categoryRepository.save(input)
   }
