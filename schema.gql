@@ -2,6 +2,12 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Brand {
+  id: String
+  name: String
+  slug: String
+}
+
 type Category {
   id: String
   name: String
@@ -23,6 +29,9 @@ type Query {
   getAllProducts: [Product!]!
   getProductById(id: String!): Product!
   getProductBySlug(slug: String!): Product!
+  getAllBrands: [Brand!]!
+  getBrandById(id: String!): Brand!
+  getBrandBySlug(slug: String!): Brand!
 }
 
 type Mutation {
@@ -32,6 +41,9 @@ type Mutation {
   createProduct(input: ProductCreateInput!): Product!
   updateProduct(input: ProductUpdateInput!): Product!
   deleteProduct(id: String!): Boolean!
+  createBrand(input: BrandCreateInput!): Brand!
+  updateBrand(input: BrandUpdateInput!): Brand!
+  deleteBrand(id: String!): Boolean!
 }
 
 input CategoryCreateInput {
@@ -58,4 +70,15 @@ input ProductUpdateInput {
   description: String!
   slug: String!
   category: String!
+}
+
+input BrandCreateInput {
+  name: String!
+  slug: String!
+}
+
+input BrandUpdateInput {
+  id: String!
+  name: String!
+  slug: String!
 }
