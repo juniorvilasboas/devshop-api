@@ -23,27 +23,42 @@ type Product {
 }
 
 type Query {
+  getAllBrands: [Brand!]!
+  getBrandById(id: String!): Brand!
+  getBrandBySlug(slug: String!): Brand!
   getAllCategories: [Category!]!
   getCategoryById(id: String!): Category!
   getCategoryBySlug(slug: String!): Category!
   getAllProducts: [Product!]!
   getProductById(id: String!): Product!
   getProductBySlug(slug: String!): Product!
-  getAllBrands: [Brand!]!
-  getBrandById(id: String!): Brand!
-  getBrandBySlug(slug: String!): Brand!
 }
 
 type Mutation {
+  createBrand(input: BrandCreateInput!): Brand!
+  uploadBrandLogo(file: Upload!, id: String!): Brand!
+  updateBrand(input: BrandUpdateInput!): Brand!
+  deleteBrand(id: String!): Boolean!
   createCategory(input: CategoryCreateInput!): Category!
   updateCategory(input: CategoryUpdateInput!): Category!
   deleteCategory(id: String!): Boolean!
   createProduct(input: ProductCreateInput!): Product!
   updateProduct(input: ProductUpdateInput!): Product!
   deleteProduct(id: String!): Boolean!
-  createBrand(input: BrandCreateInput!): Brand!
-  updateBrand(input: BrandUpdateInput!): Brand!
-  deleteBrand(id: String!): Boolean!
+}
+
+input BrandCreateInput {
+  name: String!
+  slug: String!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+input BrandUpdateInput {
+  id: String!
+  name: String!
+  slug: String!
 }
 
 input CategoryCreateInput {
@@ -70,15 +85,4 @@ input ProductUpdateInput {
   description: String!
   slug: String!
   category: String!
-}
-
-input BrandCreateInput {
-  name: String!
-  slug: String!
-}
-
-input BrandUpdateInput {
-  id: String!
-  name: String!
-  slug: String!
 }

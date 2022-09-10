@@ -1,4 +1,3 @@
-import { ApolloDriver } from '@nestjs/apollo'
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { GraphQLModule } from '@nestjs/graphql'
@@ -24,8 +23,8 @@ import { ProductModule } from './product/product.module'
       })
     }),
     GraphQLModule.forRoot({
-      driver: ApolloDriver,
-      autoSchemaFile: 'schema.gql'
+      autoSchemaFile: 'schema.gql',
+      context: ({ req, res }) => ({ req, res })
     }),
     CategoryModule,
     ProductModule,
