@@ -5,9 +5,9 @@ import * as aws from 'aws-sdk'
 export class S3 {
   constructor() {
     aws.config.update({
-      region: 'us-east-1',
-      accessKeyId: 'AKIAW24LEVE3FYD5EFN3',
-      secretAccessKey: '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'
+      region: process.env.REGION,
+      accessKeyId: process.env.ACCESSKEYID,
+      secretAccessKey: process.env.SECRETACCESSKEY
     })
   }
 
